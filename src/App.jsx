@@ -60,13 +60,11 @@ export default function App() {
               <table className="w-full">
                 <thead className="bg-indigo-500 text-white">
                   <tr>
-                    <th className="p-3 text-center">Ovitrap ID</th>
-                    <th className="p-3 pl-6 text-center">Ovos</th>
-                    <th className="p-3 text-center">Data</th>
-                    <th className="p-3 text-center">Coleta</th>
-                    <th className="pr-4 text-center min-w-[180px]">
-                      Coordenadas
-                    </th>
+                    <th className="p-3 pl-8 ">Ovitrap ID</th>
+                    <th className="p-3 pl-8 ">Ovos</th>
+                    <th className="p-3 pl-8 ">Data</th>
+                    <th className="p-3 pl-8 ">Coleta</th>
+                    <th className="pr-6 min-w-[180px]">Coordenadas</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -75,13 +73,13 @@ export default function App() {
                       key={trap.counting_id}
                       className="border-t border-gray-200 hover:bg-blue-50 transition-colors"
                     >
-                      <td className="p-4 pl-6">{trap.ovitrap_id}</td>
-                      <td className="p-4 pl-14">{trap.eggs}</td>
-                      <td className="p-4 pl-14">{formatDate(trap.date)}</td>
-                      <td className="p-4 pl-14">
+                      <td className="p-4 pl-10">{trap.ovitrap_id}</td>
+                      <td className="p-4 pl-16">{trap.eggs}</td>
+                      <td className="p-4 pl-16">{formatDate(trap.date)}</td>
+                      <td className="p-4 pl-16">
                         {formatDate(trap.date_collect)}
                       </td>
-                      <td className="p-4 pl-14">
+                      <td className="p-4 pl-16">
                         <span className="block">
                           {trap.latitude.toFixed(6)}
                         </span>
