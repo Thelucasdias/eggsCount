@@ -39,12 +39,23 @@ No third-party charting libraries are currently used. A custom UI and logic are 
 
 Although the current priority is delivering functional value, the project will evolve with improvements in structure, maintainability, and performance.
 
-Planned technical improvements include:
+The EggsCount project will be developed in incremental steps to ensure usability and scalability:
 
-- Better code organization and modularization
-- Reusable component structure
-- Integration of chart libraries for richer analytics
-- Application of design patterns and clean architecture principles
+1. **Data Visualization and API Consumption**  
+   - Initial integration with the public API.  
+   - Display of statistical data from mosquito egg traps ("ovitrampas") in a clear and accessible interface.  
+
+2. **Data Filtering and Organization**  
+   - Implementation of filters (date, location, quantity, etc.).  
+   - Improved navigation and categorization of collected data.  
+
+3. **Data Management via Platform**  
+   - Allow users to insert, edit, and delete records directly through the application.  
+   - Enable controlled access for health agents and managers.  
+
+4. **AI-Powered Reporting**  
+   - Integration of artificial intelligence to generate dynamic reports.  
+   - Provide insights, suggestions, and automatic report delivery to the sector manager.  
 
 ## Installation
 
