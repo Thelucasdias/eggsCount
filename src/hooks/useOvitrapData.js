@@ -8,8 +8,13 @@ export default function useOvitrapData() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const apiKey = import.meta.env.VITE_API_KEY;
+        const params = new URLSearchParams({
+          key: apiKey,
+          page: "1",
+        });
         const response = await fetch(
-          "https://contaovos.com/pt-br/api/lastcountingpublic?municipality=Corinto"
+          "https://contaovos.com/pt-br/api/lastcounting?{params.toString()}"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
