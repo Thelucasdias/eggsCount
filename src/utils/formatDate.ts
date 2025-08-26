@@ -3,7 +3,7 @@
  * @returns {string} - Date formatted as "DD/MM/YYYY"
  */
 
-export function formatDate(dateStr) {
+export function formatDate(dateStr: string): string {
   if (!dateStr) return "";
   const [day, month, year] = dateStr.split("-");
   return `${day}/${month}/${year}`;

@@ -1,3 +1,4 @@
+import { OvitrapData } from "../types/ovitrap";
 /**
  * Calculates the positivity rate of traps.
  *
@@ -6,7 +7,7 @@
  * @returns {number} - Percentage of traps that are positive (0–100).
  */
 
-export function calculatePositivityRate(data) {
+export function calculatePositivityRate(data: OvitrapData[]): number {
   const total = data.length;
   const positives = data.filter((trap) => trap.eggs > 0).length;
   return total > 0 ? (positives / total) * 100 : 0;
