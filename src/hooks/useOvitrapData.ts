@@ -15,18 +15,10 @@ export default function useOvitrapData(): UseOvitrapDataReturn {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiKey = import.meta.env.VITE_API_KEY;
-        const params = new URLSearchParams({
-          key: apiKey,
-          page: "1",
-        });
-
-        const response = await fetch(
-          `https://contaovos.com/pt-br/api/lastcounting?${params.toString()}`
-        );
+        const response = await fetch("/api/traps?page=1");
 
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error("Falha ao buscar dados da API interna");
         }
 
         const resData: OvitrapData[] = await response.json();
