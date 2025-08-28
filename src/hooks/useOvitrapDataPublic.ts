@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { OvitrapData, UseOvitrapDataReturn } from "../types/ovitrap";
+import { sortOvitrapData } from "../utils/sortOvitrap";
 
 export default function useOvitrapDataPublic(): UseOvitrapDataReturn {
   const [data, setData] = useState<OvitrapData[]>([]);
@@ -16,7 +17,7 @@ export default function useOvitrapDataPublic(): UseOvitrapDataReturn {
         }
 
         const resData: OvitrapData[] = await response.json();
-        setData(resData);
+        setData(sortOvitrapData(resData));
       } catch (err) {
         console.error("Erro ao buscar dados:", err);
         setError(err as Error);
