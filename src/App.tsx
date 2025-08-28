@@ -1,5 +1,5 @@
 import "./index.css";
-import useOvitrapData from "./hooks/useOvitrapData";
+import useOvitrapDataPublic from "./hooks/useOvitrapDataPublic";
 import Header from "./components/Header";
 import DataTable from "./components/DataTable";
 import SummaryCard from "./components/SummaryCard";
@@ -8,7 +8,7 @@ import PositiveTrapsList from "./components/PositiveTrapsList";
 import { calculatePositivityRate } from "./utils/calculations";
 
 export default function App() {
-  const { data, loading, error } = useOvitrapData();
+  const { data, loading, error } = useOvitrapDataPublic();
   const currentWeek = data.length > 0 ? data[0].week : null;
   const positivityRate = calculatePositivityRate(data);
 
@@ -17,12 +17,10 @@ export default function App() {
       <Header />
 
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Tabela de dados */}
         <section className="lg:col-span-2 bg-white p-4 rounded-lg shadow">
           <DataTable data={data} loading={loading} currentWeek={currentWeek} />
         </section>
 
-        {/* Barra lateral */}
         <aside className="space-y-6">
           <SummaryCard data={data} />
           <WeeklyChart data={data} />

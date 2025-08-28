@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { OvitrapData, UseOvitrapDataReturn } from "../types/ovitrap";
 
-export default function useOvitrapData(): UseOvitrapDataReturn {
+export default function useOvitrapDataPublic(): UseOvitrapDataReturn {
   const [data, setData] = useState<OvitrapData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -9,10 +9,10 @@ export default function useOvitrapData(): UseOvitrapDataReturn {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/traps?page=1");
+        const response = await fetch(`/api/traps-public?municipality=Corinto`);
 
         if (!response.ok) {
-          throw new Error("Falha ao buscar dados da API interna");
+          throw new Error("Falha ao buscar dados da API pública");
         }
 
         const resData: OvitrapData[] = await response.json();
